@@ -8,3 +8,5 @@ redis==5.0.7
 langgraph==0.1.4
 pyjwt==2.8.0
 cryptography==42.0.8
+twilio==9.10.9
+langgraph-checkpoint-redis==0.5.1

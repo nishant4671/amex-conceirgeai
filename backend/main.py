@@ -49,6 +49,10 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+# Register disruptions router
+from app.api.disruptions import router as disruptions_router
+app.include_router(disruptions_router, prefix=settings.API_V1_STR)
+
 # CORS configuration
 app.add_middleware(
     CORSMiddleware,
