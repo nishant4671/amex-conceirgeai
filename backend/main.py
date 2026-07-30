@@ -49,9 +49,11 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# Register disruptions router
+# Register disruptions and concierge routers
 from app.api.disruptions import router as disruptions_router
+from app.api.concierge import router as concierge_router
 app.include_router(disruptions_router, prefix=settings.API_V1_STR)
+app.include_router(concierge_router, prefix=settings.API_V1_STR)
 
 # CORS configuration
 app.add_middleware(
